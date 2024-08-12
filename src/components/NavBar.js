@@ -2,8 +2,8 @@ import React from "react";
 
 const NavBar = () => {
   return (
-    <div className="sticky top-0 z-10 bg-white shadow-md">
-      <div className="flex justify-end">
+    <div className="sticky top-0 z-10 bg-white">
+      <div className="flex justify-center">
         <a href="#home" className="p-4 text-black text-center hover:text-gray-700 transition duration-200 active:text-blue-500">
           Home
         </a>
