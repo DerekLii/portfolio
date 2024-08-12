@@ -48,14 +48,16 @@ const Experience = () => {
   ];
 
   return (
-    <div id="experience" className="bg-white max-w-screen-sm max-w-screen-lg mx-auto mb-2 px-4">
-      <h1 className="text-xl font-normal text-black text-left mb-5">Experience</h1>
+    <div id="experience" className="bg-white w-full mx-auto mb-2 px-4">
+      <div className="bg-white md:w-1/2 mx-auto">
+        <div className="text-2xl font-medium text-black text-left mb-5">Experience</div>
+      </div>
       <div className="mx-auto">
         <VerticalTimeline lineColor={"black"}>
           {timelineItems.map((item, index) => (
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
-              contentStyle={{ background: "white", color: "black", border: "2px solid black", padding: "10px" }}
+              contentStyle={{ background: "white", color: "black", border: "2px solid black" }}
               contentArrowStyle={{ borderRight: "7px solid black" }}
               key={index}
               date={<div className={`mx-4 ${index % 2 === 0 ? "text-left" : "text-right"} px-2`}>{item.date}</div>}
