@@ -1,11 +1,12 @@
 import React from "react";
-import "./styles.css";
 
 const Project = (props) => {
   return (
-    <a class="project" href="https://www.google.ca/" target="_blank" rel="noopener noreferrer">
-      <img src={props.image} alt="linkedin" />
-    </a>
+    <div className="w-24 h-24 md:w-52 md:h-52 border-2 border-black bg-white">
+      <a href={props.link} target="_blank" rel="noopener noreferrer">
+        <img src={props.image} alt="Project" className="w-full h-full object-cover" />
+      </a>
+    </div>
   );
 };
 

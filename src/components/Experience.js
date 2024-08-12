@@ -4,7 +4,6 @@ import "react-vertical-timeline-component/style.min.css";
 import logo1 from "../images/logo1.jpg";
 import logo2 from "../images/logo2.jpg";
 import logo3 from "../images/logo3.jpg";
-import "./styles.css";
 
 const Experience = () => {
   const timelineItems = [
@@ -41,39 +40,33 @@ const Experience = () => {
     },
   ];
 
-  let icons = [
-    <img src={logo3} alt="rbc" style={{ width: "auto", height: "57px", borderRadius: "100%", border: "1px solid black" }}></img>,
-    <img src={logo2} alt="ford" style={{ width: "auto", height: "57px", borderRadius: "100%", border: "1px solid black" }}></img>,
-    <img src={logo2} alt="ford" style={{ width: "auto", height: "57px", borderRadius: "100%", border: "1px solid black" }}></img>,
-    <img src={logo1} alt="canada" style={{ width: "auto", height: "57px", borderRadius: "100%", border: "1px solid black" }}></img>,
+  const icons = [
+    <img src={logo3} alt="rbc" className="w-full rounded-full border border-black" />,
+    <img src={logo2} alt="ford" className="w-full rounded-full border border-black" />,
+    <img src={logo2} alt="ford" className="w-full rounded-full border border-black" />,
+    <img src={logo1} alt="canada" className="w-full rounded-full border border-black" />,
   ];
 
   return (
-    <div id="experience" class="section">
-      <h1 class="title">Experience</h1>
-      <div className="mx-auto ">
+    <div id="experience" className="bg-white max-w-screen-sm max-w-screen-lg mx-auto mb-2 px-4">
+      <h1 className="text-xl font-normal text-black text-left mb-5">Experience</h1>
+      <div className="mx-auto">
         <VerticalTimeline lineColor={"black"}>
           {timelineItems.map((item, index) => (
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
-              contentStyle={{ background: index % 2 === 0 ? "white" : "white", color: "black", border: "2px solid black", padding: "5px" }}
+              contentStyle={{ background: "white", color: "black", border: "2px solid black", padding: "10px" }}
               contentArrowStyle={{ borderRight: "7px solid black" }}
               key={index}
-              date={
-                <div className="mx-4" style={{ textAlign: index % 2 === 0 ? "left" : "right", paddingLeft: "20px", paddingRight: "20px" }}>
-                  {item.date}
-                </div>
-              }
+              date={<div className={`mx-4 ${index % 2 === 0 ? "text-left" : "text-right"} px-2`}>{item.date}</div>}
               iconStyle={{ background: "black", color: "#3498db", border: "2px solid black" }}
               icon={icons[index]}
               position={index % 2 === 0 ? "left" : "right"}
             >
-              <h2 className="timeline-span" style={{ fontWeight: 700 }}>
-                {item.job}
-              </h2>
-              <h4 className="timeline-span">{item.title}</h4>
-              <h4 className="timeline-span">{item.location}</h4>
-              <h4 className="display-linebreak timeline-span">{item.content}</h4>
+              <h2 className="text-left font-bold text-sm sm:text-base">{item.job}</h2>
+              <h4 className="text-left text-sm sm:text-base">{item.title}</h4>
+              <h4 className="text-left text-sm sm:text-base">{item.location}</h4>
+              <h4 className="whitespace-pre-line text-left text-sm sm:text-base">{item.content}</h4>
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>
